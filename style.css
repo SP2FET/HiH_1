@@ -1,3 +1,26 @@
 ﻿body
 {
+    background-image: url("background.jpg");
+    background-attachment: fixed;
+    background-size:cover;
+}
+#dokument /*opis struktury dokumentu - wielkość, marginesy, obramowanie*/
+{
+    width: 960px;
+    height:850px;
+    margin:10px auto;
+    border: 1px solid white;
+}
+#back_img {
+    max-width: 100%;
+    height: auto;
+    z-index: -1;
+}
+.header{
+    margin-left:50px;
+    margin-right:50px;
+    text-align:center;
+}
+div{
+    color:white;
 }
