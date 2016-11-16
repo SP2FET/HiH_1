@@ -21,10 +21,12 @@ body
     background-image: url("background.jpg");
     background-attachment: fixed;
     background-size:cover;
+    color:white;
    
 }
 #main
 {
+    font-family:ansonregular;
     border-radius: 25px;
     max-width: 960px;
     height:850px;
@@ -36,6 +38,24 @@ body
     padding-top:25px;
     padding-left:25px;
     padding-right:25px;
+}
+footer{
+
+    
+    border-radius: 25px;
+    max-width: 960px;
+    margin:10px auto;
+   
+    background: rgb(0,0,0); 
+    background: rgba(0, 0, 0, .7);
+    padding-top:10px;
+    padding-bottom:10px;
+    padding-left:25px;
+    padding-right:25px;
+
+    font-family:ansonregular;
+    text-align:center;
+    font-style:italic;
 }
 #back_img {
     max-width: 100%;
