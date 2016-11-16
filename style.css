@@ -1,12 +1,31 @@
-﻿body
+﻿@font-face {
+    font-family: 'ansonregular';
+    src: url('font/anson-regular-webfont.eot');
+    src: url('font/anson-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('font/anson-regular-webfont.woff') format('woff'),
+         url('font/anson-regular-webfont.ttf') format('truetype'),
+         url('font/anson-regular-webfont.svg#ansonregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+h2{
+    font-family: ansonregular;
+    font-size:52px;
+    letter-spacing: 5px;
+    font-style: italic;
+    font-weight: bold;
+}
+body
 {
     background-image: url("background.jpg");
     background-attachment: fixed;
     background-size:cover;
+   
 }
-#dokument /*opis struktury dokumentu - wielkość, marginesy, obramowanie*/
+#main
 {
-    width: 960px;
+    max-width: 960px;
     height:850px;
     margin:10px auto;
     border: 1px solid white;
@@ -17,10 +36,46 @@
     z-index: -1;
 }
 .header{
-    margin-left:50px;
-    margin-right:50px;
-    text-align:center;
+    max-width: 960px;
+    display: block;
+    margin: auto;
+    text-align: center;
+   /*border: 1px solid white;*/ 
+    
 }
 div{
     color:white;
+}
+
+nav ul {
+    
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    
+}
+
+nav li {
+    float: left;
+}
+
+#prawy{
+    float: right;
+}
+
+nav li a {
+    font-family: ansonregular;
+    font-size:20px;
+    display: block;
+    color: white;
+    text-align: center;
+    font-style: italic;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+/* Change the link color to #111 (black) on hover */
+nav li a:hover {
+    background-color: #525252;
 }
