@@ -32,8 +32,7 @@ body
     height:850px;
     margin:10px auto;
     /*border: 1px solid white;*/
-    background: rgb(54, 25, 25); /* Fall-back for browsers that don't
-                                    support rgba */
+    background: rgb(54, 25, 25); 
     background: rgba(0, 0, 0, .7);
     padding-top:25px;
     padding-left:25px;
@@ -70,9 +69,7 @@ footer{
    /*border: 1px solid white;*/ 
     
 }
-div{
-    color:white;
-}
+
 
 nav ul {
     
@@ -104,11 +101,11 @@ nav li a {
     
 }
 
-/* Change the link color to #111 (black) on hover */
+
 nav li a:hover, .menu:hover  {
     background-color: #525252;
 }
-#active{
+.active{
     background-color: #994d00;
 }
 
