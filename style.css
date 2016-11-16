@@ -81,6 +81,7 @@ nav ul {
     padding: 0;
     overflow: hidden;
     
+    
 }
 
 nav li {
@@ -100,9 +101,30 @@ nav li a {
     font-style: italic;
     padding: 14px 16px;
     text-decoration: none;
+    
 }
 
 /* Change the link color to #111 (black) on hover */
-nav li a:hover {
+nav li a:hover, .menu:hover  {
     background-color: #525252;
+}
+#active{
+    background-color: #994d00;
+}
+
+li.menu {
+    display: inline-block;
+}
+.podmenu {
+    display: none;
+    position: absolute;  
+    min-width: 160px;
+    background: rgb(0,0,0);
+    background: rgba(0, 0, 0, .9);
+    
+
+}
+
+.menu:hover .podmenu {
+    display: block;
 }
