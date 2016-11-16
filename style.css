@@ -25,10 +25,17 @@ body
 }
 #main
 {
+    border-radius: 25px;
     max-width: 960px;
     height:850px;
     margin:10px auto;
-    border: 1px solid white;
+    /*border: 1px solid white;*/
+    background: rgb(54, 25, 25); /* Fall-back for browsers that don't
+                                    support rgba */
+    background: rgba(0, 0, 0, .7);
+    padding-top:25px;
+    padding-left:25px;
+    padding-right:25px;
 }
 #back_img {
     max-width: 100%;
