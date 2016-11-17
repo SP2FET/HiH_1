@@ -146,6 +146,12 @@ li.menu {
     margin-bottom: 10px;
     
 }
+.mail{
+    color:white;
+}
+.mail:visited{
+    color:#737373;
+}
 
 form td{
     padding-top:5px;
