@@ -125,3 +125,23 @@ li.menu {
 .menu:hover .podmenu {
     display: block;
 }
+
+table{
+    border: 2px solid white;
+}
+/*rows="10" cols="48"*/
+
+
+.kontakt{
+    
+    display: block;
+    margin: auto;
+    
+}
+
+textarea{
+    display: block;
+    height: 100px;
+    width: 350px;
+    
+}
