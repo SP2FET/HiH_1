@@ -121,19 +121,20 @@ li.menu {
     
 
 }
+.center{
+    text-align:center;
+}
 
 .menu:hover .podmenu {
     display: block;
 }
 
 
-
 #kontakt{
     padding-top: 50px;
-    display: block;
-    margin: auto;
-    padding-bottom: 30px;
-    
+    display: flex;
+    justify-content: center; 
+    padding-bottom: 10px;
 }
 
 #wiadomosc{
