@@ -150,19 +150,24 @@ form td{
 }
 
 div.galeria{
-    
+    padding-top:50px;
+    padding-left:30px;
+    padding-right:30px;
 }
 
 .zdjecie{
-    margin: 5px;
+    
+    margin: 10px;
     border: 4px solid white;
     float: left;
     width: 180px;
 }
 
 .zdjecie img {
-    width: 100%;
-    height: auto;
+   
+  margin: auto;
+  width: 100%;
+    
 }
 
 div.opis {
