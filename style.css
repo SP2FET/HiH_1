@@ -138,7 +138,7 @@ li.menu {
     margin-bottom: 10px;
     
 }
-.mail, p a{
+.mail, p a, ul a{
     color:white;
 }
 .mail:visited, p a:visited{
