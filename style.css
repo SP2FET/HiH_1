@@ -141,7 +141,7 @@ li.menu {
 .mail, p a, ul li a{
     color:white;
 }
-.mail:visited, p a:visited{
+.mail:visited, p a:visited, ul li a:visited{
     color:#737373;
 }
 
