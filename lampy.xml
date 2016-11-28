@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<strona jezyk="PL">
+  
+    <spis_tresci>
+      <wpis>Strona główna</wpis>
+      <wpis>Lampy</wpis>
+      <wpis>Diody</wpis>
+    </spis_tresci>
+
+    <artykul nazwa="Strona główna">
+      Witaj na stronie poświęconej tematowi lamp elektronowych!
+      Jeżeli nie wiesz co to jest lampa elektronowa, zajrzyj na stronę Trochę teorii.
+      Jeżeli jesteś ciekawy czym odróżnia się lampa od tranzystora, odwiedź tą stronę. Lampy i urządzenia na ich podstawie zbudowane są piękne, wystarczy spojrzeć w galerii :)
+      <link zrodlo="teoria.html">Trochę teorii</link>
+      <zdjecie zrodlo="zdjecie1.jpg" opis="zdjecie nr 1"/>
+    </artykul>
+
+    <artykul nazwa="Diody">
+  
+    </artykul>
+  
+    <lampa nazwa="EL84">
+      <typ>pentoda</typ>     
+      <Ua>250.0 V</Ua>
+    
+    </lampa>
+  
+    <stopka>Bartosz Cichocki 2016</stopka>
+
+</strona>

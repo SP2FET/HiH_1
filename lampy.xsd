@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+
+    <xsd:annotation>
+    <xsd:documentation xml:lang="pl">
+      XML Schema do pliku projektowego.
+    </xsd:documentation>
+  </xsd:annotation>
+
+  <xsd:element name="strona" type="strona_typ"/>
+  
+  <xsd:attribute name="nazwa" type="krotki_string"/>
+
+  <xsd:element name="zdjecie" type="zdjecie_typ"/>
+  
+  <xsd:complexType name="strona_typ">
+    <xsd:sequence>
+      <xsd:element name="spis_tresci">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="wpis" maxOccurs="unbounded" type="krotki_string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="artykul" type="artykul_typ" maxOccurs="unbounded"/>
+      <xsd:element name="lampa" type="lampa_typ" maxOccurs="unbounded"/>
+      <xsd:element name="stopka" type="xsd:string"/>
+    </xsd:sequence>
+    <xsd:attribute name="jezyk">
+      <xsd:simpleType>
+        <xsd:restriction base="xsd:string">
+          <xsd:pattern value="[A-Z]{2}"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+    </xsd:attribute>
+  </xsd:complexType>
+
+  <xsd:complexType name="artykul_typ" mixed="true">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="link">
+        <xsd:complexType>
+          <xsd:simpleContent>
+            <xsd:extension base="xsd:string">
+              <xsd:attribute name="zrodlo" type="xsd:string"/>
+            </xsd:extension>
+          </xsd:simpleContent>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element ref="zdjecie" minOccurs="0"/>
+    </xsd:sequence>
+    <xsd:attribute ref="nazwa"/>
+  </xsd:complexType>
+
+  <xsd:complexType name="zdjecie_typ">
+    <xsd:simpleContent>
+      <xsd:extension base="xsd:string">
+        <xsd:attribute name="zrodlo" type="xsd:string"/>
+        <xsd:attribute name="opis" type="dlugi_string"/>
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  
+  <xsd:simpleType name="dlugi_string">
+    <xsd:restriction base="xsd:string">
+      <xsd:minLength value="10"/>
+      <xsd:maxLength value="150"/>
+    </xsd:restriction> 
+    
+  </xsd:simpleType>
+  <xsd:simpleType name="krotki_string">
+    <xsd:restriction base="xsd:string">
+      <xsd:maxLength value="50"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+
+  <xsd:complexType name="lampa_typ">
+    <xsd:sequence>
+      <xsd:element name="typ" type="rodzaj_typ"/>
+      <xsd:element name="Ua" type="napiecie_typ"/>
+    </xsd:sequence>
+    <xsd:attribute ref="nazwa" />
+  </xsd:complexType>
+  
+  <xsd:simpleType name="napiecie_typ">
+    <xsd:restriction base="xsd:string">
+      <xsd:pattern value="\d{3}.\d{1} V"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+
+  <xsd:simpleType name="rodzaj_typ">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="dioda"/>
+      <xsd:enumeration value="trioda"/>
+      <xsd:enumeration value="tetroda"/>
+      <xsd:enumeration value="pentoda"/>
+      <xsd:enumeration value="inne"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  
+</xsd:schema>
+
+<!-- jeszcze 2 złożone, 1 prosty, 1 lokalny prosty, wybór, definicja grupy, -->
