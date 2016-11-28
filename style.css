@@ -93,7 +93,7 @@ nav li a {
 }
 
 
-nav li a:hover, .menu:hover  {
+nav li a:hover, .menu:hover, .active:hover  {
     background-color: #525252;
 }
 .active{
@@ -141,7 +141,7 @@ li.menu {
 .mail, p a, ul li a{
     color:white;
 }
-.mail:visited, p a:visited, ul li a:visited{
+.mail:visited, p a:visited{
     color:#737373;
 }
 
@@ -195,4 +195,43 @@ div.opis {
     background-color:white;
     font-weight:bold;
     height:30px;
+}
+
+ @-webkit-keyframes menu-anim {
+  50% {
+    -webkit-transform: scale(0.8);
+    transform: scale(0.8);
+  }
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+@keyframes menu-anim {
+  50% {
+    -webkit-transform: scale(0.8);
+    transform: scale(0.8);
+  }
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+.menu-anim {
+ 
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px transparent;
+}
+
+.menu-anim:hover, .menu-anim:focus, .menu-anim:active {
+  -webkit-animation-name: menu-anim;
+  animation-name: menu-anim;
+  -webkit-animation-duration: 0.3s;
+  animation-duration: 0.3s;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+  -webkit-animation-iteration-count: 1;
+  animation-iteration-count: 1;
 }
