@@ -120,6 +120,10 @@ li.menu {
     display: block;
 }
 
+#svg{
+    fill:white;
+}
+
 
 #kontakt{
     padding-top: 50px;

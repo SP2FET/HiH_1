@@ -12,19 +12,38 @@
       Witaj na stronie poświęconej tematowi lamp elektronowych!
       Jeżeli nie wiesz co to jest lampa elektronowa, zajrzyj na stronę Trochę teorii.
       Jeżeli jesteś ciekawy czym odróżnia się lampa od tranzystora, odwiedź tą stronę. Lampy i urządzenia na ich podstawie zbudowane są piękne, wystarczy spojrzeć w galerii :)
-      <link zrodlo="teoria.html">Trochę teorii</link>
+      <link link_href="teoria.html">Trochę teorii</link>
+      <link link_href="teoria2.html">Trochę teorii 2</link>
+      <link link_href="teoria3.html">Trochę teorii 3</link>
       <zdjecie zrodlo="zdjecie1.jpg" opis="zdjecie nr 1"/>
+      <ocena>4</ocena>
     </artykul>
 
     <artykul nazwa="Diody">
-  
+      Artykul o diodach
+      <link link_href="teoria4.html">Trochę teorii 4</link>
+      <zdjecie zrodlo="zdjecie2.jpg" opis="zdjecie nr 2"/>
+      <zdjecie zrodlo="zdjecie3.jpg" opis="zdjecie nr 3"/>
+      <zdjecie zrodlo="zdjecie4.jpg" opis="zdjecie nr 4"/>
+      <ocena>5</ocena>
     </artykul>
   
     <lampa nazwa="EL84">
       <typ>pentoda</typ>     
       <Ua>250.0 V</Ua>
-    
+      <zdjecie zrodlo="lampa2.jpg" opis="Lampa EL84"/>
     </lampa>
+  
+  <wzmacniacz nazwa="SLO-100">
+    <lampy>EL34 ECC83</lampy>
+    <moc>100 W</moc>
+    <typ>Head</typ>
+  </wzmacniacz>
+
+  <opinia numer="jeden">
+    <dobra/>
+    <ocena>5</ocena>
+  </opinia>
   
     <stopka>Bartosz Cichocki 2016</stopka>
 

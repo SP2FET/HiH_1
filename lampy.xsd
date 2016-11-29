@@ -9,9 +9,26 @@
   </xsd:annotation>
 
   <xsd:element name="strona" type="strona_typ"/>
-  
-  <xsd:attribute name="nazwa" type="krotki_string"/>
 
+  <xsd:attribute name="numer" type="numer_typ"/>
+  <xsd:attribute name="zrodlo" type="xsd:string"/>
+
+  <xsd:simpleType name="numer_typ">
+    <xsd:union memberTypes="krotki_string xsd:integer"/>
+  </xsd:simpleType>
+
+  
+  <xsd:attributeGroup name="attr1">
+  <xsd:attribute name="nazwa" type="krotki_string"/>
+  <xsd:attribute name="jezyk">
+    <xsd:simpleType>
+      <xsd:restriction base="xsd:string">
+        <xsd:pattern value="[A-Z]{2}"/>
+      </xsd:restriction>
+    </xsd:simpleType>
+  </xsd:attribute>
+  </xsd:attributeGroup>
+  
   <xsd:element name="zdjecie" type="zdjecie_typ"/>
   
   <xsd:complexType name="strona_typ">
@@ -25,15 +42,11 @@
       </xsd:element>
       <xsd:element name="artykul" type="artykul_typ" maxOccurs="unbounded"/>
       <xsd:element name="lampa" type="lampa_typ" maxOccurs="unbounded"/>
+      <xsd:element name="wzmacniacz" type="wzmacniacz_typ" maxOccurs="unbounded"/>
+      <xsd:element name="opinia" type="opinia_typ"/>
       <xsd:element name="stopka" type="xsd:string"/>
     </xsd:sequence>
-    <xsd:attribute name="jezyk">
-      <xsd:simpleType>
-        <xsd:restriction base="xsd:string">
-          <xsd:pattern value="[A-Z]{2}"/>
-        </xsd:restriction>
-      </xsd:simpleType>
-    </xsd:attribute>
+    <xsd:attributeGroup ref="attr1"/>
   </xsd:complexType>
 
   <xsd:complexType name="artykul_typ" mixed="true">
@@ -42,20 +55,21 @@
         <xsd:complexType>
           <xsd:simpleContent>
             <xsd:extension base="xsd:string">
-              <xsd:attribute name="zrodlo" type="xsd:string"/>
+              <xsd:attribute name="link_href" type="dlugi_string"/>
             </xsd:extension>
           </xsd:simpleContent>
         </xsd:complexType>
       </xsd:element>
-      <xsd:element ref="zdjecie" minOccurs="0"/>
+      <xsd:element ref="zdjecie" minOccurs="0" maxOccurs="unbounded"/>
+      <xsd:element ref="ocena"/>
     </xsd:sequence>
-    <xsd:attribute ref="nazwa"/>
+    <xsd:attributeGroup ref="attr1"/>
   </xsd:complexType>
 
   <xsd:complexType name="zdjecie_typ">
     <xsd:simpleContent>
       <xsd:extension base="xsd:string">
-        <xsd:attribute name="zrodlo" type="xsd:string"/>
+        <xsd:attribute ref="zrodlo"/>
         <xsd:attribute name="opis" type="dlugi_string"/>
       </xsd:extension>
     </xsd:simpleContent>
@@ -78,13 +92,20 @@
     <xsd:sequence>
       <xsd:element name="typ" type="rodzaj_typ"/>
       <xsd:element name="Ua" type="napiecie_typ"/>
+      <xsd:element ref="zdjecie" minOccurs="0"/>
     </xsd:sequence>
-    <xsd:attribute ref="nazwa" />
+    <xsd:attributeGroup ref="attr1"/>
   </xsd:complexType>
   
   <xsd:simpleType name="napiecie_typ">
     <xsd:restriction base="xsd:string">
       <xsd:pattern value="\d{3}.\d{1} V"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+
+  <xsd:simpleType name="moc_typ">
+    <xsd:restriction base="xsd:string">
+      <xsd:pattern value="\d{3} W"/>
     </xsd:restriction>
   </xsd:simpleType>
 
@@ -97,7 +118,41 @@
       <xsd:enumeration value="inne"/>
     </xsd:restriction>
   </xsd:simpleType>
+
+  <xsd:complexType name="wzmacniacz_typ">
+    <xsd:sequence>    
+      <xsd:element name="lampy">
+        <xsd:simpleType>
+          <xsd:list itemType="xsd:string"/>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="moc" type="moc_typ"/>
+      <xsd:element name="typ" type="xsd:string"/>
+      <xsd:element ref="zdjecie" minOccurs="0"/>
+    </xsd:sequence>
+    <xsd:attributeGroup ref="attr1"/>
+  </xsd:complexType>
+
+  <xsd:complexType name="opinia_typ">
+    <xsd:sequence>
+      <xsd:choice>
+        <xsd:element name="dobra"/>
+        <xsd:element name="taka_sobie"/>
+        <xsd:element name="zla"/>
+      </xsd:choice>
+      <xsd:element ref="ocena"/>
+    </xsd:sequence>
+    <xsd:attribute ref="numer"/>
+  </xsd:complexType>
+
+  <xsd:element name="ocena">
+    <xsd:simpleType>
+      <xsd:restriction base="xsd:integer">
+        <xsd:minInclusive value="1"/>
+        <xsd:maxInclusive value="5"/>
+      </xsd:restriction>
+    </xsd:simpleType>
+  </xsd:element>
   
 </xsd:schema>
 
-<!-- jeszcze 2 złożone, 1 prosty, 1 lokalny prosty, wybór, definicja grupy, -->
