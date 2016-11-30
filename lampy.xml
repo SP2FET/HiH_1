@@ -17,6 +17,15 @@
       <link link_href="teoria3.html">Trochę teorii 3</link>
       <zdjecie zrodlo="zdjecie1.jpg" opis="zdjecie nr 1"/>
       <ocena>4</ocena>
+      <lokalizacja>
+        <zrodlo>
+          Wikipedia
+          <data>
+            <sprawdzona>tak</sprawdzona>
+            <data_week>2015-11-11</data_week>
+          </data>
+        </zrodlo>
+      </lokalizacja>
     </artykul>
 
     <artykul nazwa="Diody">
@@ -41,7 +50,7 @@
   </wzmacniacz>
 
   <opinia numer="jeden">
-    <dobra/>
+    <dobra>bardzo</dobra>
     <ocena>5</ocena>
   </opinia>
   
